@@ -1,5 +1,5 @@
 - hosts: all
   roles:
-  - apache
+  - newrelic
   vars_files:
     - external_vars.yaml
