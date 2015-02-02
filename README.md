@@ -22,7 +22,9 @@ And then you can deploy against an arbitrary inventory:
 
 ### External Variable
 
-This playbook requires a License Key from New Relic. The variable can be
-sourced with the inventory:
+This playbook requires a License Key from New Relic as well as the application
+and port to monitor on. These variables can be sourced with the inventory:
 
     newrelic_license_key: <license-key-from-new-relic>
+    newrelic_application: Keystone
+    application_port: 35357
