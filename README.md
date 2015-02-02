@@ -28,4 +28,4 @@ and port to monitor on. These variables can be sourced with the inventory:
     newrelic_license_key: <license-key-from-new-relic>
     newrelic_application: Keystone
     application_port: 35357
-    newrelic_wake_interval: 20
+    newrelic_wakeup_interval: 20
