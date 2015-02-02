@@ -1,0 +1,50 @@
+---
+- name: update apt cache
+  apt:
+    update_cache=yes
+
+- name: install pip
+  apt:
+    pkg=python-pip
+
+- name: install newrelic agent
+  pip:
+    name=newrelic-plugin-agent
+    state=latest
+
+- name: create a user for newrelic
+  user:
+    name=newrelic
+    state=present
+    home=/opt/newrelic-plugin-agent/
+
+- name: create configuration directory for newrelic
+  file:
+    path=/etc/newrelic
+    state=directory
+    owner=newrelic
+    mode=0755
+
+- name: deploy newrelic configuration file
+  template:
+    src=newrelic-plugin-agent.cfg
+    dest=/etc/newrelic/newrelic-plugin-agent.cfg
+    owner=newrelic
+    mode=0755
+
+- name: create logging directory for newrelic
+  file:
+    path=/var/log/newrelic
+    state=directory
+    owner=newrelic
+    mode=0755
+
+- name: create run directory for newrelic
+  file:
+    path=/var/run/newrelic
+    state=directory
+    owner=newrelic
+    mode=0755
+
+- name: start newrelic agent
+  shell: newrelic-plugin-agent -c /etc/newrelic/newrelic-plugin-agent.cfg
