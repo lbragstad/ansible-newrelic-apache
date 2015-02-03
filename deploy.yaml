@@ -1,1 +1,1 @@
-- include: playbooks/newrelic-apache.yaml
+- include: playbooks/newrelic-deploy.yaml

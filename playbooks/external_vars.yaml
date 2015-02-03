@@ -1,0 +1,6 @@
+---
+# New Relic account key
+newrelic_license_key: ab0ed432a1e4348a492e4325535ade5db32cf46d
+application_port: 80
+newrelic_application: KeystoneV3
+newrelic_wakeup_interval: 20

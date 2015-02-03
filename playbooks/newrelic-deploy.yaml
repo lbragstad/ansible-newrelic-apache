@@ -1,5 +1,6 @@
 - hosts: all
   roles:
-  - newrelic
+  - apache
+  - sysmond
   vars_files:
     - external_vars.yaml
